@@ -6,7 +6,7 @@ import { getMessages, getUsersForSidebar, sendMessage } from '../controllers/mes
 const router = express.Router();
 
 router.get("/users", protectRoute, getUsersForSidebar); // Static route
+router.post("/send/:id", protectRoute, sendMessage);   // Dynamic route
 router.get("/:id", protectRoute, getMessages);         // Dynamic route
-router.post("/send/:id", protectRoute, sendMessage);
 
 export default router;
